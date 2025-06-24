@@ -11,7 +11,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/app/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 import {
     NavigationMenu,
@@ -21,9 +21,9 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/app/components/ui/navigation-menu"
-import {Button} from "@/app/components/ui/button";
-import {Switch} from "@/app/components/ui/switch";
+} from "@/components/ui/navigation-menu"
+import {Button} from "@/components/ui/button";
+import {Switch} from "@/components/ui/switch";
 
 const components: { title: string; href: string; description: string }[] = [
     {

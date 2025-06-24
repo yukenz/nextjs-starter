@@ -1,10 +1,12 @@
-import "./globals.css";
+/* CSS */
+import "@/styles/globals.css";
 import '@rainbow-me/rainbowkit/styles.css';
 
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import React from "react";
 import Providers from "@/app/providers";
+import {RetroNavbar} from "@/components/retro-navbar";
 
 
 const geistSans = Geist({
@@ -34,6 +36,7 @@ export default function RootLayout({
             // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
             <Providers>
+                <RetroNavbar/>
                 {children}
             </Providers>
         </body>

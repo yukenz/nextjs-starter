@@ -2,8 +2,8 @@
 
 import {WagmiProvider} from 'wagmi'
 import {QueryClientProvider} from '@tanstack/react-query'
-import {config as wagmiConfig} from '@/app/config/WagmiConfig'
-import {config as queryClientConfig} from '@/app/config/QueryClientConfig'
+import {config as wagmiConfig} from '@/config/WagmiConfig'
+import {config as queryClientConfig} from '@/config/QueryClientConfig'
 
 import React from "react";
 
