@@ -26,6 +26,9 @@ export default function Home() {
                     <li className="tracking-[-.01em]">
                         Save and see your changes instantly.
                     </li>
+                    <li className="tracking-[-.01em]">
+                        NEXT_PUBLIC_ANALYTICS_ID ➡ {process.env.NEXT_PUBLIC_ANALYTICS_ID}
+                    </li>
                 </ol>
                 <div className="flex gap-4 items-center flex-col sm:flex-row">
                     <a
