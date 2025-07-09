@@ -1,6 +1,7 @@
 import {createConfig, http} from 'wagmi';
 import {injected} from 'wagmi/connectors';
 import {type Chain} from 'viem'
+import {monadTestnet} from "viem/chains";
 
 
 declare module 'wagmi' {
@@ -21,10 +22,11 @@ const localhost = {
 
 export const config = createConfig({
     chains: [
-        localhost
+        localhost,monadTestnet
     ],
     connectors: [injected()],
     transports: {
         [localhost.id]: http(),
+        [monadTestnet.id]: http(),
     },
 });

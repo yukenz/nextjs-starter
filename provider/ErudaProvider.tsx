@@ -10,7 +10,8 @@ export default function ErudaProvider({children}: ErudaProviderProps) {
 
     useEffect(() => {
         import("eruda").then(value => {
-            value.default.init();
+            value.default.init({
+            });
         });
     }, []);
 

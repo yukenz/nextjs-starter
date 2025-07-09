@@ -3,6 +3,9 @@ import NextBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
   /* config options here */
+    turbopack:{
+
+    }
 };
 
 const withBundleAnalyzer = NextBundleAnalyzer({

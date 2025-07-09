@@ -1,0 +1,3 @@
+bun add circomlib snarkjs @noir-lang/noir_wasm @noir-lang/backend_barretenberg
+
+bun add react-hot-toast lucide-react
