@@ -62,8 +62,8 @@ export function RetroNavbar() {
                                 <Terminal className="w-6 h-6 text-black"/>
                             </div>
                             <div className="font-mono">
-                                <div className="text-green-400 font-bold text-lg leading-none">ETH-SIGNER</div>
-                                <div className="text-green-500 text-xs">v2.0.1</div>
+                                <div className="text-green-400 font-bold text-lg leading-none">YUYUN SPACE</div>
+                                <div className="text-green-500 text-xs">Nothing Specials</div>
                             </div>
                         </div>
 

@@ -6,7 +6,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import React from "react";
 import Providers from "@/app/providers";
-import {RetroNavbar} from "@/components/retro-navbar";
+import {RetroNavbar} from "@/components/navbar/retro-navbar";
 
 
 const geistSans = Geist({
