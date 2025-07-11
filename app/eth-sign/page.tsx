@@ -2,8 +2,9 @@
 
 import {useAccount, useConnect, useSignMessage} from 'wagmi'
 import {CheckCircle, Copy, LoaderPinwheel, Shield, Terminal, Zap} from 'lucide-react';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {injected} from 'wagmi/connectors'
+import {hashMessage} from 'viem/utils'
 
 
 export default function Page() {
@@ -14,10 +15,20 @@ export default function Page() {
         signMessage,
         data: signature,
         isPending: signingPending,
+        isSuccess: signingSuccess,
         error: signingError
     } = useSignMessage()
 
+    useEffect(() => {
+
+        if (signingSuccess) {
+            setHashMessageVar(hashMessage(message))
+        }
+
+    }, [signingSuccess])
+
     const [message, setMessage] = useState<string>('');
+    const [hashMessageVar, setHashMessageVar] = useState<string>('');
     const [copied, setCopied] = useState<boolean>(false);
 
 
@@ -148,6 +159,40 @@ export default function Page() {
                                         <div
                                             className="bg-gray-900 border border-green-400 rounded p-3 text-green-300 font-mono text-xs break-all">
                                             {signature || signingError}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Hash Message display */}
+                                {hashMessageVar && (
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <label className="text-green-400 font-mono text-sm">HASH:</label>
+                                            <button
+                                                onClick={async (event) => {
+                                                    event.preventDefault();
+                                                    await navigator.clipboard.writeText(hashMessageVar);
+                                                    setCopied(true);
+                                                    setTimeout(() => setCopied(false), 2000);
+                                                }}
+                                                className="flex items-center space-x-2 text-green-400 hover:text-green-300 font-mono text-sm transition-colors"
+                                            >
+                                                {copied ? (
+                                                    <>
+                                                        <CheckCircle className="w-4 h-4"/>
+                                                        <span>COPIED!</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <Copy className="w-4 h-4"/>
+                                                        <span>COPY</span>
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
+                                        <div
+                                            className="bg-gray-900 border border-green-400 rounded p-3 text-green-300 font-mono text-xs break-all">
+                                            {hashMessageVar}
                                         </div>
                                     </div>
                                 )}
