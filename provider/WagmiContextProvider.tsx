@@ -6,6 +6,7 @@ import {config as wagmiConfig} from '@/config/WagmiConfig'
 import {config as queryClientConfig} from '@/config/QueryClientConfig'
 
 import React from "react";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 
 type ErudaProviderProps = {
     children: React.ReactNode;
@@ -16,6 +17,7 @@ export default function WagmiContextProvider({children}: ErudaProviderProps) {
         <WagmiProvider config={wagmiConfig}>
             <QueryClientProvider client={queryClientConfig}>
                 {children}
+                <ReactQueryDevtools initialIsOpen={false} client={queryClientConfig} />
             </QueryClientProvider>
         </WagmiProvider>
     );
